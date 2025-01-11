@@ -1,9 +1,11 @@
+'use client'
+import { useState } from 'react';
 import BookRow from './bookRow';
 
-const books = [
+const booksArray = [
   { id: 1, name: 'Who moved my cheese!', price: 200 },
   { id: 2, name: 'Godfather', price: 300 },
-  { id: 2, name: 'Shantaram', price: 290 },
+  { id: 3, name: 'Shantaram', price: 290 },
 ];
 
 const bookListHeader = [
@@ -12,9 +14,16 @@ const bookListHeader = [
   { key: 'price', label: 'Price' }
 ];
 
-const BookList = (props) => (
-  <div className="mt-4 p-4 bg-white">
-    <div>{props.title}</div>
+const BookList = (props) => {
+  const [books, setBooks] = useState(booksArray);
+  const addBook = () => {
+    setBooks([...books, { id: 0, name: 'Placeholder', price: 0 }])
+  }
+  return (<div className="mt-4 p-4">
+    <div className='mb-3'>
+    <button className='float-right bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded' onClick={addBook}>Add</button>
+    </div>
+    <span>{props.title}</span>
     <table className="min-w-full mt-4 table-auto border-collapse border border-gray-200">
       <thead>
         <tr>
@@ -34,7 +43,7 @@ const BookList = (props) => (
         ))}
       </tbody>
     </table>
-  </div>
-);
+  </div>)
+};
 
 export default BookList;
