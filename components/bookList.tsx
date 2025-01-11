@@ -21,7 +21,7 @@ const BookList = (props) => {
   }
   return (<div className="mt-4 p-4">
     <div className='mb-3'>
-    <button className='float-right bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded' onClick={addBook}>Add</button>
+    <button className='float-right bg-transparent text-cadet-blue font-semibold py-2 px-4 border rounded' onClick={addBook}>Add</button>
     </div>
     <span>{props.title}</span>
     <table className="min-w-full mt-4 table-auto border-collapse border border-gray-200">

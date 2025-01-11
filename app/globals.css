@@ -20,3 +20,7 @@ body {
   color: rgb(var(--foreground-rgb));
   background-color: white;
 }
+
+.text-cadet-blue {
+  color: rgb(94, 158, 161);
+}
