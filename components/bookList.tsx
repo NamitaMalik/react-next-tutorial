@@ -1,14 +1,15 @@
 import BookRow from './bookRow';
 
 const books = [
-  { id: 1, name: 'Who moved my cheese!' },
-  { id: 2, name: 'Godfather' },
-  { id: 2, name: 'Shantaram' },
+  { id: 1, name: 'Who moved my cheese!', price: 200 },
+  { id: 2, name: 'Godfather', price: 300 },
+  { id: 2, name: 'Shantaram', price: 290 },
 ];
 
 const bookListHeader = [
   { key: 'id', label: 'ID' },
   { key: 'name', label: 'Name' },
+  { key: 'price', label: 'Price' }
 ];
 
 const BookList = (props) => (
