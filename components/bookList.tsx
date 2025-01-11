@@ -11,10 +11,10 @@ const bookListHeader = [
   { key: 'name', label: 'Name' },
 ];
 
-const BookList = () => (
-  <>
-    <div>List of Books</div>
-    <table className="min-w-full table-auto border-collapse border border-gray-200">
+const BookList = (props) => (
+  <div className="mt-4 p-4 bg-white">
+    <div>{props.title}</div>
+    <table className="min-w-full mt-4 table-auto border-collapse border border-gray-200">
       <thead>
         <tr>
           {bookListHeader.map((h) => (
@@ -33,7 +33,7 @@ const BookList = () => (
         ))}
       </tbody>
     </table>
-  </>
+  </div>
 );
 
 export default BookList;

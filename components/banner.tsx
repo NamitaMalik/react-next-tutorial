@@ -1,11 +1,9 @@
 import styles from './banner.module.css';
 
-const Banner = (props: { headerText: string }) => {
+const Banner = ({children}) => {
   return (
-    <header className="min-w-full">
-      <h1>{props.headerText}</h1>
-      <h1>My Blog</h1>
-      <h2 className={styles.h2}> Has something for everyone!</h2>
+    <header className="mt-4 font-bold min-w-full text-center bg-white">
+      <h1 className={styles.h1}>{children}</h1>
     </header>
   );
 };
