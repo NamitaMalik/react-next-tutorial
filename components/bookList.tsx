@@ -8,7 +8,7 @@ const bookListHeader = [
   { key: 'price', label: 'Price' }
 ];
 
-const BookList = (props) => {
+const BookList = ({title, selectBook}) => {
   const [books, setBooks] = useState<any[]>([]);
    
   // [] in the below function tells react that run the effect only when component is mounted
@@ -29,7 +29,7 @@ const BookList = (props) => {
     <div className='mb-3'>
     <button className='float-right bg-transparent text-cadet-blue font-semibold py-2 px-4 border rounded' onClick={addBook}>Add</button>
     </div>
-    <span>{props.title}</span>
+    <span className='font-bold text-lg'>{title}</span>
     <table className="min-w-full mt-4 table-auto border-collapse border border-gray-200">
       <thead>
         <tr>
@@ -45,7 +45,7 @@ const BookList = (props) => {
       </thead>
       <tbody>
         {books.map((book) => (
-          <BookRow book={book} bookListHeader={bookListHeader} key={book.id} />
+          <BookRow book={book} bookListHeader={bookListHeader} selectBook={selectBook} key={book.id} />
         ))}
       </tbody>
     </table>
