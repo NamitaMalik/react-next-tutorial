@@ -11,12 +11,12 @@ export default async function userHandler(req, res) {
   const readFileData = await readFile(jsonFile);
   await delay(1000);
   const books = JSON.parse(readFileData).books;
-  const house = books.find((rec) => rec.id === id);
-  if (house) {
+  const book = books.find((rec) => rec.id === id);
+  if (book) {
     res.setHeader("Content-Type", "application/json");
-    res.status(200).json(house);
+    res.status(200).json(book);
   } else {
-    res.status(404).send("house not found");
+    res.status(404).send("book not found");
   }
   console.log(`GET /api/books/${id} status: 200`);
 }
