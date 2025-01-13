@@ -14,7 +14,7 @@ const App = () => {
   return (
     <>
       <Banner> My Book Store </Banner>
-      {selectedBook ? (<Book book={selectedBook} />) : (<BookList title="List of Books" selectBook={setSelectedBookWrapper} />)
+      {selectedBook ? (<Book book={selectedBook} clearSelection={() => setSelectedBook(undefined)} />) : (<BookList title="List of Books" selectBook={setSelectedBookWrapper} />)
       }
 
     </>
