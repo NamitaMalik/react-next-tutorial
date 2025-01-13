@@ -22,3 +22,9 @@ const App = () => {
 };
 
 export default App;
+
+/*
+When the App component’s state (selectedBook) changes, 
+React considers the entire App tree as "dirty" and re-evaluates it. 
+Since BookList and BookDetail are children of App, they get re-created, resetting their local states.
+*/
