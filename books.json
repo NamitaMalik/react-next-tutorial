@@ -1,0 +1,29 @@
+{
+    "books": [
+      {
+        "id": 1,
+        "name": "Who moved my cheese!",
+        "price": 9000
+      },
+      {
+        "id": 2,
+        "name": "Godfather",
+        "price": 500
+      },
+      {
+        "id": 3,
+        "name": "Shantaram",
+        "price": 200500
+      },
+      {
+        "id": 4,
+        "name": "Namesake",
+        "price": 259500
+      },
+      {
+        "id": 5,
+        "name": "Pride and Prejudice",
+        "price": 400500
+      }
+    ]
+  }

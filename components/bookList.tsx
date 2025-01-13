@@ -1,12 +1,6 @@
 'use client'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import BookRow from './bookRow';
-
-const booksArray = [
-  { id: 1, name: 'Who moved my cheese!', price: 200 },
-  { id: 2, name: 'Godfather', price: 300 },
-  { id: 3, name: 'Shantaram', price: 290 },
-];
 
 const bookListHeader = [
   { key: 'id', label: 'ID' },
@@ -15,10 +9,22 @@ const bookListHeader = [
 ];
 
 const BookList = (props) => {
-  const [books, setBooks] = useState(booksArray);
+  const [books, setBooks] = useState<any[]>([]);
+   
+  // [] in the below function tells react that run the effect only when component is mounted
+    useEffect(() => {
+      const fetchBooks = async () => {
+        const response = await fetch('/api/books');
+        const books = await response.json();
+        setBooks(books);
+      }
+      fetchBooks();
+    }, []);
+
   const addBook = () => {
     setBooks([...books, { id: 0, name: 'Placeholder', price: 0 }])
-  }
+  };
+
   return (<div className="mt-4 p-4">
     <div className='mb-3'>
     <button className='float-right bg-transparent text-cadet-blue font-semibold py-2 px-4 border rounded' onClick={addBook}>Add</button>
